@@ -1,0 +1,6 @@
+server.port: 9001
+
+eureka:
+  instance:
+    hostname: peer-1-server.com
+    metadataMap.zone: zone1

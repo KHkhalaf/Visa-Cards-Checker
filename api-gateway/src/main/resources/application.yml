@@ -1,0 +1,39 @@
+
+spring:
+  application:
+    name: api-gateway
+  profiles.active: zone1
+
+zuul:
+  routes:
+    visacard-serviceChecker:
+      path: /api/visacardChecker/**
+      url: http://localhost:8081
+      serviceId: visacard-serviceChecker
+      stripPrefix: false
+    visacard-serviceChecker1:
+      path: /api/visacardChecker1/**
+      url: http://localhost:8181
+      serviceId: visacard-serviceChecker1
+      stripPrefix: false
+    visacard-serviceMQ:
+      path: /api/visacardMQ/**
+      url: http://localhost:8281
+      serviceId: visacard-serviceMQ
+      stripPrefix: false
+
+eureka:
+  instance:
+    appname: ${spring.application.name}
+  client:
+    prefer-same-zone-eureka: true
+    registerWithEureka: true
+    fetchRegistry: true
+    region: region-1
+    service-url:
+      defaultZone: http://peer-1-server.com:9001/eureka/
+      zone1: http://peer-1-server.com:9001/eureka/
+      zone2: http://peer-2-server.com:9002/eureka/
+      availability-zones:
+        region-1: zone1,zone2
+

@@ -1,0 +1,13 @@
+package ecommerce.visacardserviceChecker;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class VisacardServiceCheckerApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

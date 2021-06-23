@@ -1,0 +1,6 @@
+server.port: 9002
+
+eureka:
+  instance:
+    hostname: peer-2-server.com
+    metadataMap.zone: zone2

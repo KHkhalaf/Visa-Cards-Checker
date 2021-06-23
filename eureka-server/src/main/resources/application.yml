@@ -1,0 +1,16 @@
+---
+# This default profile is used when running a single instance completely standalone:
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    region: region-1
+    serviceUrl:
+      zone1: http://peer-1-server.com:9001/eureka/
+      zone2: http://peer-2-server.com:9002/eureka/
+    availability-zones:
+      region-1: zone1,zone2
+
+spring.profiles.active: zone1
